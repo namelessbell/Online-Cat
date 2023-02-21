@@ -1,0 +1,55 @@
+<%- include('adminheader'); -%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/admin.css">
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="cards">
+                <a href="/admin/allcats">
+                <div class="card">
+                    <div class="box">
+                        <h1><%=countok%></h1>
+                        <h3>Uploaded Cats</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="students.png" alt="">
+                    </div>
+                </div>
+                </a>
+                <a href="/admin/userlist">
+                <div class="card">
+                    <div class="box">
+                        <h1><%=countuser%></h1>
+                        <h3>Registered Users</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="teachers.png" alt="">
+                    </div>
+                </div>
+                </a>
+                <a href="/admin/pendingcat">
+                <div class="card">
+                    <div class="box">
+                        <h1><%=countkucing%></h1>
+                        <h3>Pending </h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="schools.png" alt="">
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

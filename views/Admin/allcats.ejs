@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script type="text/javascript" src="/public/js/table_script.js"></script>
+
+    <style>
+            table, th, td {
+        border: 1px solid black;
+        font-size: 15pt;
+        border-collapse: collapse;
+        padding: 10px;
+        }
+
+        table.center {
+        margin-left: auto;
+        margin-right: auto;
+}
+      
+    </style>
+
+</head>
+<body>
+    <%- include('adminheader'); -%>
+    <br><br><br><br>
+    
+    <div id="wrapper">
+        <% if(kucing.length>0) { %>
+        <table class="center" cellspacing=2 cellpadding=5 id="data_table" style="width:80%">
+        <tr>
+        <th>NO</th>
+        <th style="width:50%">CAT DETAILS</th>
+        <th>STATUS</th>
+        <th>ACTION</th>
+        </tr>
+        <% for(var i=0; i<kucing.length;i++) { %>
+        <tr id="row1">
+            <td id="age_row1"><img src="/uploads/<%= kucing[i].image%>" alt="" width="100" ></td>
+            <td id="name_row1">
+                Breed:<%= kucing[i].name%><br>
+                Color: <%= kucing[i].color%><br>
+                Size: <%= kucing[i].size%><br>
+                Vaccinated: <%= kucing[i].type%><br>
+                State: <%= kucing[i].state%><br>
+                City: <%= kucing[i].city%>
+                
+            </td>
+            <td id="country_row1"><%= kucing[i].status%></td>
+        
+        <td>
+        <a href="/admin/deletebook/<%=kucing[i]._id%>" class="btnd">Delete</a>
+        </td>
+        </tr>
+        <% } %> 
+        </table>
+        <% } else { %>
+            <div>No Product found.</div>
+          <% } %>
+        </div>
+        
+    
+    </body>

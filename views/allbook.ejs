@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    
+  <%- include('header'); -%>
+
+  <section class="arrivals" id="arrivals">
+
+    <% if(buku.length>0) { %>
+    <div class="swiper arrivals-slider">
+        <% for(var i=0; i<buku.length;i++) { %>
+        <div class="swiper-wrapper">
+            <a href="/bookdetails/<%=buku[i]._id%>" class="swiper-slide box">
+                <div class="image">
+                    <img src="/uploads/<%=buku[i].image%>" alt="">
+                </div>
+                <div class="content">
+                    <h3><%= buku[i].title%></h3>
+                    <div class="price">RM <%= buku[i].price%></div><br>
+                    <div class="price">Category: <%= buku[i].category%></div>
+                    <div class="price">Subject: <%= buku[i].subject%></div>
+                    <div class="price">Desciption: <%= buku[i].description%></div>
+                </div>
+            </a>
+        </div>
+        <% } %> 
+    </div>
+    <% } else { %>
+        <h1 class="heading"> <span>No product found</span> </h1>
+    <% } %>
+
+</section>

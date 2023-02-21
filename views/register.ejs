@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<%- include('header'); -%>
+<br><br><br><br><br>
+<div class="login-form-container">
+    <form action="/register" method="post">
+        <h3>register</h3>       
+        <span>email</span>
+        <input type="email" name="email" class="box" placeholder="Enter email" id="email" required>
+        <span>username</span>
+        <input type="text" name="name" class="box" placeholder="Enter username" id="name" required>
+        <span>password</span>
+        <input type="password" name="password" class="box" placeholder="Enter password" id="password" required minlength="6">
+        <input type="submit" value="sign up" class="btn">
+        <p>Have a account ? <a href="/login">Login</a></p>
+    </form>
+
+</div>
+
+

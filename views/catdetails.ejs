@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    
+  <%- include('header'); -%>
+
+  <section class="deal">
+
+    <div class="content">
+        
+        <h1>Type: <%= kucing.name %></h1>
+        <h3>Color: <%= kucing.color %></h3>
+        <h3>Size: <%= kucing.size %></h3>
+        <h3>Vaccinated: <%= kucing.type %></h3>
+        <h3>State: <%= kucing.state %></h3>
+        <h3>City: <%= kucing.city %></h3>
+        <a onclick="myFunction()" class="btn">Contact Seller</a>
+    </div>
+
+    <div class="image">
+        <img src="/uploads/<%=kucing.image%>" alt="">
+    </div>
+
+</section>
+<script>
+    function myFunction() {
+      alert("Please Login to Contact Seller!");
+    }
+</script>

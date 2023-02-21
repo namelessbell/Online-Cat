@@ -1,0 +1,46 @@
+<%- include('adminheader'); -%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/admin.css">
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>User Details</h2>
+                    </div>
+                    <table>
+                        <% if(info.length>0) { %>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Action</th>
+                        </tr>
+                        <% for(var i=0; i<info.length;i++) { %>
+                        <tr>
+                            
+                            <td><%= info[i].name%></td>
+                            <td><%= info[i].email%></td>
+                            <td><%= info[i].contact%></td>
+                            <td><a href="/admin/deleteuser/<%=info[i]._id%>" class="btnd">Delete</a></td>  
+                        </tr>
+                        <% } %> 
+                        <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

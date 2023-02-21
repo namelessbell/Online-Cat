@@ -1,0 +1,74 @@
+<%- include('userheader'); -%>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="login-form-container">
+
+    <form action="/user/addcat" method="post" enctype="multipart/form-data">
+        <h3>Add Cat</h3>
+        <span>Upload Image</span>
+        <input type="file" id="image" name="image" required>
+
+        <span>Cat Breed/ Cat type</span>
+        <label for="name"></label>
+        <select name="name" id="name">
+        <option value="Choose">Choose Here</option>
+        <option value="British Shorthair">British Shorthair</option>
+        <option value="Kampung">Kampung</option>
+        <option value="Persian">Persian</option>
+        <option value="Ragdoll">Ragdoll</option>
+        <option value="Siamese">Siamese</option>
+        <option value="Scottish">Scottish</option>
+        <option value="Sphynx">Sphynx</option>
+        <option value="Bengal">Bengal</option>
+
+        </select>
+        
+        
+        <span>Cat Color</span>
+        <input type="text" name="color" class="box" placeholder="cat color" id="color" required>
+        
+        <span>Size</span><br>
+        <input type="radio" id="size1" name="size" value="kitten">
+        <label for="size1">Kitten</label><br>
+        <input type="radio" id="size2" name="size" value="adult">
+        <label for="size2">Adult</label><br><br>
+
+        <span>Vaccinated</span><br>
+        <input type="radio" id="choice1" name="type" value="yes">
+        <label for="choice1">Yes</label><br>
+        <input type="radio" id="choice2" name="type" value="no">
+        <label for="choice">No</label><br><br>
+
+        <span>City</span>
+        <input type="text" name="city" class="box" placeholder="city" id="city" required>
+
+        <span>State</span>
+        <label for="state"></label>
+        <select name="state" id="state">
+        <option value="Johor">Johor</option>
+        <option value="Kedah">Kedah</option>
+        <option value="Kelantan">Kelantan</option>
+        <option value="Kuala Lumpur">Kuala Lumpur</option>
+        <option value="Labuan">Labuan</option>
+        <option value="Melaka">Melaka</option>
+        <option value="Negeri Sembilan">Negeri Sembilan</option>
+        <option value="Pahang">Pahang</option>
+        <option value="Penang">Penang</option>
+        <option value="Perak">Perak</option>
+        <option value="Perlis">Perlis</option>
+        <option value="Putrajaya">Putrajaya</option>
+        <option value="Sabah">Sabah</option>
+        <option value="Sarawak">Sarawak</option>
+        <option value="Selangor">Selangor</option>
+        <option value="Terengganu">Terengganu</option> 
+        </select>
+
+        
+        
+
+          
+        <input type="submit" value="Add Cat" class="btn">
+    </form>
+
+</div>
+
+

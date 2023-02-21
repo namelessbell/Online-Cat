@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT</title>
+
+    
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    
+  <%- include('userheader'); -%>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#arrivals" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#blogs" class="fas fa-blog"></a>
+</nav>
+
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="row">
+
+        <div class="content">
+            <h3>Update and Adopt cat online.</h3>
+            <p>McKitty" is a platform for for cat lovers in Malaysia to adopt cats or to upload any rescued cat.</p>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="/public/image/cat1.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/public/image/cat2.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/public/image/cat3.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/public/image/cat4.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/public/image/cat5.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/public/image/cat6.jpg" alt=""></a>
+            </div>
+            <img src="/public/image/stand.png" class="stand" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- home section ense  -->
+<!-- featured section starts  -->
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>featured cats</span> </h1>
+
+    <div class="swiper featured-slider">
+        <% if(kucing.length>0) { %>
+        <div class="swiper-wrapper">
+            <% for(var i=0; i<kucing.length;i++) { %>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="/uploads/<%=kucing[i].image%>" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured cats</h3>
+                    <div class="price"><%= kucing[i].name%></div>
+                    <a href="/user/catdetails/<%=kucing[i]._id%>" class="btn">View</a>
+                </div>  
+            </div>
+            <% } %> 
+        </div>
+        <% } %>
+         
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+    </div>
+
+</section>
+
+<!-- featured section ends -->
+
+
+<!-- arrivals section starts  -->
+
+<section class="arrivals" id="arrivals">
+    <h1 class="heading"> <span>All Cats</span> </h1>
+    <% if(kucing.length>0) { %>
+    <div class="swiper arrivals-slider">
+        <% for(var i=0; i<kucing.length;i++) { %>
+            <a href="/user/catdetails/<%=kucing[i]._id%>" class="swiper-slides box">
+                <div class="image">
+                    <img src="/uploads/<%=kucing[i].image%>" alt="" style="width:250px;height:320px;">
+                </div>
+                <div class="content">
+                    <h3><%= kucing[i].name%></h3>
+                    <div class="price">Name/ Type: <%= kucing[i].name%></div><br>
+                    <div class="price">Color: <%= kucing[i].color%></div>
+                    <div class="price">Size: <%= kucing[i].size%></div>
+                    <div class="price">State: <%= kucing[i].state%></div>
+                </div>
+            </a>
+            <% } %> 
+    </div>
+    <% } %>
+</section>
+
+<!-- arrivals section ends -->
+
+<!-- deal section starts  -->
+
+
+<!-- deal section ends -->
+
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+
+    <div class="credit"> created by <span>.....</span> 2022 </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader  -->
+
+<div class="loader-container">
+    <img src="/public/image/cat_cute.gif" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="/public/js/script.js"></script>
+
+</body>
+</html>
